@@ -1,0 +1,54 @@
+Model
+    Todo
+        state
+            todoDescription
+            todoIsCompleted
+        action
+            []setTodoDescription
+            []setTodoIsCompleted
+
+TodoStore
+    state
+        todos
+        applyFilterType
+    action
+        []addTodo
+        []deleteTodo
+        []clearCompleted
+        []setApplyFilterType
+    computed
+        []todosItemsLeft
+        []appliedFilterList
+
+TodoComponent
+    TodoInput
+        []TodoInputTextImage
+        []TodoInputBox
+    TodoList
+        TodoRow
+            []renderActive
+                []ActiveImage
+                []ActiveText
+            []renderCompleted
+                []CommpletedImage
+                []CompletedText
+            []renderEdit
+                []EditInputBox
+    TodoButtonComponent
+        ActiveItemsLeft
+            []todoArrayActiveLength
+            []ActiveItemsLeftText
+        ButtonsList
+            ApplyFilterButton
+                []Button
+            ClearCompletedButton
+                []StyledClearCompletedButton
+            
+
+TodoItems for testing
+    []setting todoIsCompleted
+    []setting todoDescription
+    []adding todo
+    []deleting todo
+    []TodoInputBox
+    []Button
