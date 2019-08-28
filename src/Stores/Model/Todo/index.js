@@ -2,9 +2,10 @@ import { action, observable } from "mobx";
 
 class Todo {
   @observable todoDescription;
-  @observable todoIsCompleted=false;
+  @observable todoIsCompleted
   constructor() {
     this.todoDescription = "";
+    this.todoIsCompleted=false;
   }
   @action setTodoDescription = description => {
     this.todoDescription = description;
