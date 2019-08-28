@@ -14,7 +14,9 @@ class TodoStore{
             )
     }
     @action clearCompleted=()=>{
-        
+        this.todos=this.todos.filter(todoEach=>
+            todoEach.todoIsCompleted===false
+            )
     }
     }
 export default TodoStore;
