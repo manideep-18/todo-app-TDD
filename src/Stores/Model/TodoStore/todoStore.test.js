@@ -25,7 +25,7 @@ describe('TodoStore testsuit', () => {
     })
     it('should test setApplyFilterType',()=>{
         const todoStore=new TodoStore();
-        todoStore.setApplyFilterType();
+        todoStore.setApplyFilterType('All');
         expect(todoStore.applyFilterType).toBe('All');
     })
 })

@@ -20,7 +20,7 @@ class TodoStore{
             )
     }
     @action setApplyFilterType=(filterType)=>{
-
+        this.applyFilterType=filterType;
     }
     }
 export default TodoStore;
