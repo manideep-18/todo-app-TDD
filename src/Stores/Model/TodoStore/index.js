@@ -23,6 +23,10 @@ class TodoStore{
         this.applyFilterType=filterType;
     }
     @computed get todosItemsLeft(){
-            } 
+        const todosItemsLeftArray=this.todos.filter(todoEach=>
+            todoEach.todoIsCompleted===false
+            )
+        return todosItemsLeftArray.length
+    } 
     }
 export default TodoStore;
