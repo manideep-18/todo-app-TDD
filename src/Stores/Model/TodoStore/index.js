@@ -9,7 +9,9 @@ class TodoStore{
         this.todos.push(todo);
     }
     @action deleteTodo=(todo)=>{
-
+        this.todos=this.todos.filter(todoEach=>
+            todoEach.todoDescription!==todo.todoDescription
+            )
     }
     }
 export default TodoStore;
