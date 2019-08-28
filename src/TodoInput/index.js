@@ -5,7 +5,7 @@ import { TodoInputBg, TodoInputBox } from './styledComponents';
     render() {
         return (
             <TodoInputBg>
-                <TodoInputBox   type="text"  />
+                <TodoInputBox   type="text" placeholder="what needs to be done..." />
             </TodoInputBg>
         )
     }
