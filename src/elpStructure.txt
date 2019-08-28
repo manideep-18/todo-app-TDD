@@ -53,6 +53,6 @@ TodoItems for testing
     [x]clearCompleted
     [x]setApplyFilter
     [x]todosItemsLeft
-    [*]appliedFilterList
-    []TodoInputBox
+    [x]appliedFilterList
+    [*]TodoInputBox
     []Button
