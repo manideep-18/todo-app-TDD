@@ -34,4 +34,13 @@ describe('TodoStore testsuit', () => {
         todoStore.todos[0].setTodoIsCompleted();
         expect(todoStore.todosItemsLeft).toBe(0);
     })
+    it('should test for appliedFilterList',()=>{
+        const todoStore=new TodoStore();
+        todoStore.addTodo('mani');
+        todoStore.addTodo('deep');
+        todoStore.addTodo('hiii');
+        todoStore.todos[1].setTodoIsCompleted();
+        todoStore.setApplyFilterType('Active');
+        expect(todoStore.appliedFilterList.length).toBe(2);
+    })
 })

@@ -28,5 +28,9 @@ class TodoStore{
             )
         return todosItemsLeftArray.length
     } 
+    @computed get appliedFilterList(){
+        const todosArray=[];
+        return todosArray
+    }
     }
 export default TodoStore;

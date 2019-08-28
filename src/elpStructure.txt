@@ -52,6 +52,7 @@ TodoItems for testing
     [x]deleting todo
     [x]clearCompleted
     [x]setApplyFilter
-    [*]todosItemsLeft
+    [x]todosItemsLeft
+    [*]appliedFilterList
     []TodoInputBox
     []Button
