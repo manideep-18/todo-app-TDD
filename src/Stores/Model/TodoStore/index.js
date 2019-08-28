@@ -3,7 +3,7 @@ import Todo from "../Todo";
 
 class TodoStore{
     @observable todos=[];
-    @observable applyFilterType;
+    @observable applyFilterType="All";
     @action addTodo=(description)=>{
         const todo=new Todo();
         todo.setTodoDescription(description);
