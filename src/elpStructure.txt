@@ -46,9 +46,9 @@ TodoComponent
             
 
 TodoItems for testing
-    [*]setting todoIsCompleted
-    []setting todoDescription
-    []adding todo
+    [x]setting todoIsCompleted
+    [x]setting todoDescription
+    [*]adding todo
     []deleting todo
     []TodoInputBox
     []Button
