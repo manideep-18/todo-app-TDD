@@ -8,5 +8,8 @@ class TodoStore{
         todo.setTodoDescription(description);
         this.todos.push(todo);
     }
+    @action deleteTodo=(todo)=>{
+
+    }
     }
 export default TodoStore;
