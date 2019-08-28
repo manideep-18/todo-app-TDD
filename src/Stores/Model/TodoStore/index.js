@@ -29,7 +29,19 @@ class TodoStore{
         return todosItemsLeftArray.length
     } 
     @computed get appliedFilterList(){
-        const todosArray=[];
+        var todosArray=[];
+        if(this.applyFilterType="Active"){
+         todosArray=this.todos.filter(todoEach=>
+            todoEach.todoIsCompleted===false
+            )}
+        else if(this.applyFilterType==='Completed')
+        {
+                todosArray=this.todos.filter(todoEach=>
+                   todoEach.todoIsCompleted===true
+                   )
+        }
+        else{
+            todosArray=this.todos;}
         return todosArray
     }
     }
