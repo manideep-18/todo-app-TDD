@@ -3,6 +3,7 @@ import Todo from "../Todo";
 
 class TodoStore{
     @observable todos=[];
+    @observable applyFilterType;
     @action addTodo=(description)=>{
         const todo=new Todo();
         todo.setTodoDescription(description);
@@ -17,6 +18,9 @@ class TodoStore{
         this.todos=this.todos.filter(todoEach=>
             todoEach.todoIsCompleted===false
             )
+    }
+    @action setApplyFilterType=(filterType)=>{
+
     }
     }
 export default TodoStore;
