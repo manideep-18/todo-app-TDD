@@ -16,4 +16,11 @@ describe('TodoStore testsuit', () => {
         todoStore.deleteTodo(todo);
         expect(todoStore.todos.length).toBe(0);
     })
+    it('should test clearCompleted function',()=>{
+        const todoStore=new TodoStore();
+        todoStore.addTodo('mani');
+        todoStore.todos[0].setTodoIsCompleted();
+        todoStore.clearCompleted();
+        expect(todoStore.todos.length).toBe(0);
+    })
 })

@@ -13,5 +13,8 @@ class TodoStore{
             todoEach.todoDescription!==todo.todoDescription
             )
     }
+    @action clearCompleted=()=>{
+        
+    }
     }
 export default TodoStore;
