@@ -1,4 +1,4 @@
-import { action, observable } from "mobx";
+import { action, observable, computed } from "mobx";
 import Todo from "../Todo";
 
 class TodoStore{
@@ -22,5 +22,7 @@ class TodoStore{
     @action setApplyFilterType=(filterType)=>{
         this.applyFilterType=filterType;
     }
+    @computed get todosItemsLeft(){
+            } 
     }
 export default TodoStore;

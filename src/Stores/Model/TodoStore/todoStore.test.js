@@ -28,4 +28,10 @@ describe('TodoStore testsuit', () => {
         todoStore.setApplyFilterType('All');
         expect(todoStore.applyFilterType).toBe('All');
     })
+    it('should test todosItemsLeft',()=>{
+        const todoStore=new TodoStore();
+        todoStore.addTodo('mani');
+        todoStore.todos[0].setTodoIsCompleted();
+        expect(todoStore.todosItemsLeft).toBe(0);
+    })
 })
