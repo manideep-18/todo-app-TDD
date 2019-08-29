@@ -10,7 +10,7 @@ class TodoInput extends Component {
     this.value = this.value.trim();
     if (event.key === "Enter") {
       if (this.value !== "") {
-        this.props.todoInputChange();
+        this.props.todoInputChange(this.value);
       }
     }
   };
