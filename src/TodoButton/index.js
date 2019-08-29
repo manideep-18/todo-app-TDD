@@ -3,7 +3,9 @@ import { TodoButtonBg, StyledTodoButton } from "./styledComponents";
 import { inject } from "mobx-react";
 @inject("todoStore")
 class TodoButton extends Component {
-  handleClick = () => {};
+  handleClick = () => {
+    this.props.todoStore.setApplyFilterType(this.props.todoButtonText);
+  };
   render() {
     return (
       <TodoButtonBg>
