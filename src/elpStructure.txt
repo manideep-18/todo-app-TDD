@@ -62,5 +62,11 @@ TodoInput component testcases
     [x]checking inputBox(UI) rendered
     [x]checking inputBox with null not  pass to parent 
     [x]checking entered text to pass to parent component
-    [*]checking inputBox empty after entering text
+    [x]checking inputBox empty after entering text
 
+TodoList component testcases
+    []checking todos display
+    TodoItems
+        [*]checking text strike-off with checkbox tick
+        []checking onDoubleClick (TodoInput testcases) 
+        []checking todoDelete on closeIcon click
