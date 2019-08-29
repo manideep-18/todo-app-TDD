@@ -14,4 +14,15 @@ describe("TodoButton testsuit", () => {
     const todoButton = getByText("All");
     expect(todoButton).toBeDefined();
   });
+  it("should test StyledTodoButton handleClick function ", () => {
+    const todoStore = new TodoStore();
+    const { getByText } = render(
+      <Provider todoStore={todoStore}>
+        <TodoButton todoButtonText="Active" />
+      </Provider>
+    );
+    const todoButton = getByText("Active");
+    fireEvent.click(todoButton);
+    expect(todoStore.applyFilterType).toBe("Active");
+  });
 });
