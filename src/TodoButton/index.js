@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import { TodoFiltersBg, Button } from "./styledComponents";
 
 class TodoFilters extends Component {
-  handleClick = () => {
-    // this.props.setApplyFilterType();
-  };
+  handleClick = () => {};
   render() {
     return (
       <TodoFiltersBg>
