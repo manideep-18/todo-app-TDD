@@ -7,9 +7,11 @@ class TodoInput extends Component {
     this.value = event.target.value;
   };
   handleKeyDown = event => {
+    this.value = this.value.trim();
     if (event.key === "Enter") {
-      this.value = "";
-      this.props.todoInputChange();
+      if (this.value !== "") {
+        this.props.todoInputChange();
+      }
     }
   };
   render() {

@@ -56,3 +56,11 @@ TodoItems for testing
     [x]appliedFilterList
     [x]TodoInputBox
     [*]Button
+
+
+TodoInput component testcases
+    []checking inputBox(UI) rendered
+    []checking inputBox with null not  pass to parent 
+    []checking entered text to pass to parent component
+    []checking inputBox empty after entering text
+

@@ -13,8 +13,8 @@ describe("TodoInput Testsuit", () => {
       <TodoInput todoInputChange={todoInputChange} />
     );
     const todoInput = getByPlaceholderText("what needs to be done...");
-    fireEvent.change(todoInput);
+    // fireEvent.change(todoInput, { target: { value: "  " } });
     fireEvent.keyDown(todoInput, { key: "Enter", code: 13 });
-    expect(todoInputChange).toBeCalled();
+    expect(todoInputChange).toBeCalledTimes(0);
   });
 });
