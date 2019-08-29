@@ -5,7 +5,7 @@ class TodoButton extends Component {
   render() {
     return (
       <TodoButtonBg>
-        <StyledTodoButton></StyledTodoButton>
+        <StyledTodoButton>{this.props.todoButtonText}</StyledTodoButton>
       </TodoButtonBg>
     );
   }
