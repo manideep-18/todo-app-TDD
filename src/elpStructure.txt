@@ -54,5 +54,5 @@ TodoItems for testing
     [x]setApplyFilter
     [x]todosItemsLeft
     [x]appliedFilterList
-    [*]TodoInputBox
-    []Button
+    [x]TodoInputBox
+    [*]Button
