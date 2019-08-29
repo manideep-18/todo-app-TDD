@@ -1,19 +1,16 @@
 import React, { Component } from "react";
-import { TodoButtonBg, StyledTodoButton } from "./styledComponents";
-import { inject } from "mobx-react";
-@inject("todoStore")
-class TodoButton extends Component {
+import { TodoFiltersBg, Button } from "./styledComponents";
+
+class TodoFilters extends Component {
   handleClick = () => {
-    this.props.todoStore.setApplyFilterType(this.props.todoButtonText);
+    // this.props.setApplyFilterType();
   };
   render() {
     return (
-      <TodoButtonBg>
-        <StyledTodoButton onClick={this.handleClick}>
-          {this.props.todoButtonText}
-        </StyledTodoButton>
-      </TodoButtonBg>
+      <TodoFiltersBg>
+        <Button onClick={this.handleClick}>{this.props.todoFiltersText}</Button>
+      </TodoFiltersBg>
     );
   }
 }
-export default TodoButton;
+export default TodoFilters;

@@ -1,3 +1,3 @@
 import styled from "styled-components";
-export const TodoButtonBg = styled.div``;
-export const StyledTodoButton = styled.button``;
+export const TodoFiltersBg = styled.div``;
+export const Button = styled.button``;
