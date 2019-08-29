@@ -61,6 +61,6 @@ TodoItems for testing
 TodoInput component testcases
     [x]checking inputBox(UI) rendered
     [x]checking inputBox with null not  pass to parent 
-    [*]checking entered text to pass to parent component
-    []checking inputBox empty after entering text
+    [x]checking entered text to pass to parent component
+    [*]checking inputBox empty after entering text
 

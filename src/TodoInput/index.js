@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { TodoInputBg, TodoInputBox } from "./styledComponents";
 
 class TodoInput extends Component {
-  value = "";
+  value;
   handleChange = event => {
     this.value = event.target.value;
   };
@@ -11,6 +11,8 @@ class TodoInput extends Component {
     if (event.key === "Enter") {
       if (this.value !== "") {
         this.props.todoInputChange(this.value);
+        this.value = "";
+        // this.props.todoInputChange(this.value);
       }
     }
   };

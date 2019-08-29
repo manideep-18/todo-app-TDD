@@ -27,4 +27,14 @@ describe("TodoInput Testsuit", () => {
     fireEvent.keyDown(todoInput, { key: "Enter", code: 13 });
     expect(todoInputChange).toBeCalledWith("learn tdd");
   });
+  it("should inputBox empty after entering text", () => {
+    const todoInputChange = jest.fn();
+    const { getByPlaceholderText } = render(
+      <TodoInput todoInputChange={todoInputChange} />
+    );
+    const todoInput = getByPlaceholderText("what needs to be done...");
+    fireEvent.change(todoInput, { target: { value: "learn tdd" } });
+    fireEvent.keyDown(todoInput, { key: "Enter", code: 13 });
+    expect(todoInputChange).toBeCalledWith("");
+  });
 });
