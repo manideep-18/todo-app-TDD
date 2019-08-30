@@ -67,6 +67,6 @@ TodoInput component testcases
 TodoList component testcases
     []checking todos display
     TodoItems
-        [*]checking text strike-off with checkbox tick
-        []checking onDoubleClick (TodoInput testcases) 
+        [x]checking text strike-off with checkbox tick
+        [*]checking onDoubleClick (TodoInput testcases) 
         []checking todoDelete on closeIcon click

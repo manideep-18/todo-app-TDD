@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { TodoInputBg, TodoInputBox } from "./styledComponents";
 
 class TodoInput extends Component {
+  edit = false;
   constructor(props) {
     super(props);
     this.state = { value: "" };
@@ -18,9 +19,17 @@ class TodoInput extends Component {
       }
     }
   };
+  setValue = () => {
+    if (this.state.value === "") {
+      if (this.props.edit) {
+        this.setState({ value: this.props.description });
+      }
+    }
+  };
   render() {
     return (
       <TodoInputBg>
+        {this.setValue()}
         <TodoInputBox
           value={this.state.value}
           type="text"
