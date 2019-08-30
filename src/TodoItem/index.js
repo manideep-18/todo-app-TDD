@@ -3,7 +3,7 @@ import { TodoItemTextStrikeoff, TodoItemBg } from "./styledComponents";
 
 class TodoItem extends Component {
   handleDoubleClick = () => {
-    // this.props.todoItemChange(true);
+    this.props.todoItemChange(true);
   };
   render() {
     return (
