@@ -11,7 +11,7 @@ class TodoItem extends Component {
     this.props.todoItemChange(true);
   };
   handleClick = () => {
-    // this.props.todoItemDelete(this.props.todo);
+    this.props.todoItemDelete(this.props.todo);
   };
   render() {
     return (
