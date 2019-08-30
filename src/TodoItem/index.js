@@ -1,9 +1,17 @@
 import React, { Component } from "react";
-import { TodoItemTextStrikeoff, TodoItemBg } from "./styledComponents";
+import {
+  TodoItemTextStrikeoff,
+  TodoItemBg,
+  TodoItemDeleteButton
+} from "./styledComponents";
+import { Button } from "../TodoButton/styledComponents";
 
 class TodoItem extends Component {
   handleDoubleClick = () => {
     this.props.todoItemChange(true);
+  };
+  handleClick = () => {
+    // this.props.todoItemDelete(this.props.todo);
   };
   render() {
     return (
@@ -11,10 +19,10 @@ class TodoItem extends Component {
         <TodoItemTextStrikeoff onDoubleClick={this.handleDoubleClick}>
           {this.props.todo.todoDescription}
         </TodoItemTextStrikeoff>
-        {/* <TodoItemEditText>{this.props.todo.todoDescription}</TodoItemEditText> */}
-        {/* <TodoItem onDoubleClick={this.handleDoubleClick}>
-          {this.props.description}
-        </TodoItem> */}
+        <TodoItemDeleteButton onClick={this.handleClick}>
+          delete
+        </TodoItemDeleteButton>
+        {/* <Button>delete</Button> */}
       </TodoItemBg>
     );
   }

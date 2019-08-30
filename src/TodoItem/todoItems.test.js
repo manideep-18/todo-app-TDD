@@ -36,4 +36,15 @@ describe("Todoitems testsuit", () => {
     fireEvent.keyDown(editInput, { key: "Enter", code: 13 });
     expect(todoItemChange).toBeCalledWith("todo-edited");
   });
+  it("should test todoDelete on closeIcon click", () => {
+    const todoItemDelete = jest.fn();
+    const todo = new Todo();
+    todo.setTodoDescription("todo");
+    const { getByText } = render(
+      <TodoItem todo={todo} todoItemDelete={todoItemDelete} />
+    );
+    const deleteButton = getByText("delete");
+    fireEvent.click(deleteButton);
+    expect(todoItemDelete).toBeCalledWith(todo);
+  });
 });
