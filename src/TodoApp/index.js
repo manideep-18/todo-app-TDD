@@ -22,6 +22,9 @@ class TodoApp extends Component {
   handleEditChange = () => {
     this.setState({ editTodo: !this.state.editTodo });
   };
+  handleClearCompleted = () => {
+    this.props.todoStore.clearCompleted();
+  };
   render() {
     return (
       <TodoAppBg>
@@ -39,7 +42,7 @@ class TodoApp extends Component {
           ""
         )}
         <TodoList onTodoItemChange={this.todoItemEdit} />
-        <TodoButtonComponent />
+        <TodoButtonComponent onClearCompleted={this.handleClearCompleted} />
       </TodoAppBg>
     );
   }
