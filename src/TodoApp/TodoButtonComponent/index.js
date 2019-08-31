@@ -19,7 +19,7 @@ class TodoButtonComponent extends Component {
         <TodoFilters todoFiltersText="All" />
         <TodoFilters todoFiltersText="Active" />
         <TodoFilters todoFiltersText="Completed" />
-        <TodoClearCompletedButton></TodoClearCompletedButton>
+        <TodoClearCompletedButton>Clear Completed</TodoClearCompletedButton>
       </TodoButtonComponentBg>
     );
   }
