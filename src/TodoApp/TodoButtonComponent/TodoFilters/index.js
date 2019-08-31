@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { TodoFiltersBg, Button } from "./styledComponents";
-
+import { inject } from "mobx-react";
+@inject("todoStore")
 class TodoFilters extends Component {
   handleClick = () => {
-    this.props.setApplyFilterType();
+    this.props.todoStore.setApplyFilterType(this.props.todoFiltersText);
   };
   render() {
     return (

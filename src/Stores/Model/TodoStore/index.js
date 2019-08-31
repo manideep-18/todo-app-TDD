@@ -30,7 +30,7 @@ class TodoStore {
   }
   @computed get appliedFilterList() {
     var todosArray = [];
-    if ((this.applyFilterType = "Active")) {
+    if (this.applyFilterType === "Active") {
       todosArray = this.todos.filter(
         todoEach => todoEach.todoIsCompleted === false
       );

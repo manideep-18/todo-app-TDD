@@ -1,8 +1,9 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
-import Todo from "../Stores/Model/Todo";
-import TodoInput from "../TodoInput";
 import TodoItem from ".";
+import Todo from "../../../Stores/Model/Todo";
+import TodoInput from "../../TodoInput";
+import { Provider } from "mobx-react";
 describe("Todoitems testsuit", () => {
   it("sholud test text strike-off with checkbox tick", () => {
     const todo = new Todo();
@@ -17,19 +18,26 @@ describe("Todoitems testsuit", () => {
   it("should test onDoubleClick TodoItem", () => {
     const todoItemChange = jest.fn();
     const todo = new Todo();
+    const todoStore = new TodoStore();
     todo.setTodoDescription("todo");
     const { getByText } = render(
-      <TodoItem todo={todo} todoItemChange={todoItemChange} />
+      <TodoItem
+        todo={todo}
+        todoStore={todoStore}
+        onTodoItemChange={todoItemChange}
+      />
     );
     const editedText = getByText(todo.todoDescription);
     fireEvent.doubleClick(editedText);
-    expect(todoItemChange).toBeCalledWith(true);
+    expect(todoItemChange).toBeCalledWith(true, todo);
     const { getByPlaceholderText } = render(
-      <TodoInput
-        editTodo={true}
-        description={todo.todoDescription}
-        todoInputChange={todoItemChange}
-      />
+      <Provider todo={todo}>
+        <TodoInput
+          editTodo={true}
+          description={todo.todoDescription}
+          todoInputChange={todoItemChange}
+        />
+      </Provider>
     );
     const editInput = getByPlaceholderText("what needs to be done...");
     fireEvent.change(editInput, { target: { value: "todo-edited" } });
@@ -41,7 +49,7 @@ describe("Todoitems testsuit", () => {
     const todo = new Todo();
     todo.setTodoDescription("todo");
     const { getByText } = render(
-      <TodoItem todo={todo} todoItemDelete={todoItemDelete} />
+      <TodoItem todo={todo} onTodoItemDelete={todoItemDelete} />
     );
     const deleteButton = getByText("delete");
     fireEvent.click(deleteButton);

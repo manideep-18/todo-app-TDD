@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { TodoInputBg, TodoInputBox } from "./styledComponents";
-
+import { inject } from "mobx-react";
+@inject("todoStore", "todo")
 class TodoInput extends Component {
-  edit = false;
+  edit = true;
   constructor(props) {
     super(props);
     this.state = { value: "" };
@@ -14,22 +15,27 @@ class TodoInput extends Component {
     const str = this.state.value.trim();
     if (event.key === "Enter") {
       if (str !== "") {
-        this.props.todoInputChange(this.state.value);
+        if (this.props.edit) {
+          this.props.todo.setTodoDescription(this.state.value);
+          this.props.updateEdit();
+        } else this.props.onTodoInputChange(this.state.value);
         this.setState({ value: "" });
+      }
+      if (this.props.edit && str === "") {
+        this.props.todoStore.deleteTodo(this.props.todo);
+        this.props.updateEdit();
       }
     }
   };
   setValue = () => {
-    if (this.state.value === "") {
-      if (this.props.edit) {
-        this.setState({ value: this.props.description });
-      }
-    }
+    this.edit = false;
+    this.setState({ value: this.props.todo.todoDescription });
   };
   render() {
+    // console.log(this.state.value);
     return (
       <TodoInputBg>
-        {this.setValue()}
+        {this.props.edit && this.edit ? this.setValue() : ""}
         <TodoInputBox
           value={this.state.value}
           type="text"
