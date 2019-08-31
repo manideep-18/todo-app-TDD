@@ -13,26 +13,29 @@ inject("todo");
 class TodoItem extends Component {
   constructor(props) {
     super(props);
-    this.state = { click: false };
+    this.state = { click: false, delete: "false" };
   }
   handleCheckBoxClick = () => {
     this.props.todo.setTodoIsCompleted();
     this.setState({ click: !this.state.click });
-    // console.log(
-    //   this.props.eachTodo.setTodoIsCompleted(),
-    //   this.props.eachTodo.todoIsCompleted
-    // );
   };
   handleDoubleClick = () => {
     this.props.onTodoItemChange(true, this.props.todo);
   };
   handleClick = () => {
-    this.props.onTodoItemDelete(this.props.todo);
+    // this.setState({ delete: !this.state.delete });
+    // alert("Are you sure");
+    if (window.confirm("Are you sure"))
+      this.props.onTodoItemDelete(this.props.todo);
   };
   renderActive = () => {
     return (
       <TodoEachItemBg>
-        <CheckBox type="checkbox" onClick={this.handleCheckBoxClick} />
+        <CheckBox
+          type="checkbox"
+          onChange={this.handleCheckBoxClick}
+          checked={this.state.click}
+        />
         <TodoActiveText onDoubleClick={this.handleDoubleClick}>
           {this.props.todo.todoDescription}
         </TodoActiveText>
@@ -47,8 +50,8 @@ class TodoItem extends Component {
       <TodoEachItemBg>
         <CheckBox
           type="checkbox"
-          onClick={this.handleCheckBoxClick}
-          checked="true"
+          onChange={this.handleCheckBoxClick}
+          checked={this.state.click}
         />
         <TodoItemTextStrikeoff>
           {this.props.todo.todoDescription}

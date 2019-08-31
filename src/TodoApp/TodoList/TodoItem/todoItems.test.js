@@ -4,6 +4,7 @@ import TodoItem from ".";
 import Todo from "../../../Stores/Model/Todo";
 import TodoInput from "../../TodoInput";
 import { Provider } from "mobx-react";
+import TodoStore from "../../../Stores/Model/TodoStore";
 describe("Todoitems testsuit", () => {
   it("sholud test text strike-off with checkbox tick", () => {
     const todo = new Todo();
@@ -31,11 +32,11 @@ describe("Todoitems testsuit", () => {
     fireEvent.doubleClick(editedText);
     expect(todoItemChange).toBeCalledWith(true, todo);
     const { getByPlaceholderText } = render(
-      <Provider todo={todo}>
+      <Provider todo={todo} todoStore={todoStore}>
         <TodoInput
           editTodo={true}
           description={todo.todoDescription}
-          todoInputChange={todoItemChange}
+          onTodoInputChange={todoItemChange}
         />
       </Provider>
     );
@@ -46,6 +47,7 @@ describe("Todoitems testsuit", () => {
   });
   it("should test todoDelete on closeIcon click", () => {
     const todoItemDelete = jest.fn();
+    window.confirm = jest.fn(() => true);
     const todo = new Todo();
     todo.setTodoDescription("todo");
     const { getByText } = render(
@@ -53,6 +55,7 @@ describe("Todoitems testsuit", () => {
     );
     const deleteButton = getByText("delete");
     fireEvent.click(deleteButton);
+    expect(window.confirm).toBeCalled();
     expect(todoItemDelete).toBeCalledWith(todo);
   });
 });
