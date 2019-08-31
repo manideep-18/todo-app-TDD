@@ -8,6 +8,9 @@ import {
 @inject("todoStore")
 @observer
 class TodoButtonComponent extends Component {
+  handleClick = () => {
+    this.props.onClearCompleted();
+  };
   render() {
     return (
       <TodoButtonComponentBg>
@@ -19,7 +22,9 @@ class TodoButtonComponent extends Component {
         <TodoFilters todoFiltersText="All" />
         <TodoFilters todoFiltersText="Active" />
         <TodoFilters todoFiltersText="Completed" />
-        <TodoClearCompletedButton>Clear Completed</TodoClearCompletedButton>
+        <TodoClearCompletedButton onClick={this.handleClick}>
+          Clear Completed
+        </TodoClearCompletedButton>
       </TodoButtonComponentBg>
     );
   }
