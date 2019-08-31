@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import { inject, observer } from "mobx-react";
 import TodoFilters from "./TodoFilters";
-import { TodoButtonComponentBg } from "./styledComponents";
+import {
+  TodoButtonComponentBg,
+  TodoClearCompletedButton
+} from "./styledComponents";
 @inject("todoStore")
 @observer
 class TodoButtonComponent extends Component {
@@ -16,6 +19,7 @@ class TodoButtonComponent extends Component {
         <TodoFilters todoFiltersText="All" />
         <TodoFilters todoFiltersText="Active" />
         <TodoFilters todoFiltersText="Completed" />
+        <TodoClearCompletedButton></TodoClearCompletedButton>
       </TodoButtonComponentBg>
     );
   }
