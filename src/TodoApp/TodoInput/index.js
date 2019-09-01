@@ -23,7 +23,7 @@ class TodoInput extends Component {
       }
       if (this.props.edit && str === "") {
         this.props.todoStore.deleteTodo(this.props.todo);
-        this.props.updateEdit();
+        this.props.onTodoEdit();
       }
     }
   };

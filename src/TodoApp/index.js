@@ -13,19 +13,18 @@ class TodoApp extends Component {
     super(props);
     this.state = { edit: false };
   }
-  handleEditChange = () => {
-    this.setState({ edit: !this.state.edit });
-  };
-  handleTodoItemEditChange = (editTodoStatus, todo) => {
+  handleTodoItemEdit = (editTodoStatus, todo) => {
     this.setState({ edit: editTodoStatus });
     this.todo = todo;
   };
-  handleClearCompleted = () => {
-    this.props.todoStore.clearCompleted();
-  };
-
   handleTodoInputChange = description => {
     this.props.todoStore.addTodo(description);
+  };
+  handleEditChange = () => {
+    this.setState({ editTodo: !this.state.editTodo });
+  };
+  handleClearCompleted = () => {
+    this.props.todoStore.clearCompleted();
   };
   render() {
     return (

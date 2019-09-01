@@ -1,8 +1,9 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
+import { Provider } from "mobx-react";
 import TodoButtonComponent from ".";
 import TodoStore from "../../Stores/Model/TodoStore";
-import { Provider } from "mobx-react";
+
 describe("TodoButtonComponent testsuit", () => {
   it("should test ClearCompleted button rendered", () => {
     const todoStore = new TodoStore();
