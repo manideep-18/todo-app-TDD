@@ -36,7 +36,7 @@ describe("TodoInput Testsuit", () => {
     const todoInputChange = jest.fn();
     const { getByPlaceholderText } = render(
       <Provider todo={todo} todoStore={todoStore}>
-        <TodoInput onTodoInputChange={todoInputChange} />
+        <TodoInput onTodoInput={todoInputChange} />
       </Provider>
     );
     const todoInput = getByPlaceholderText("what needs to be done...");
@@ -50,7 +50,7 @@ describe("TodoInput Testsuit", () => {
     const todoInputChange = jest.fn();
     const { getByPlaceholderText } = render(
       <Provider todo={todo} todoStore={todoStore}>
-        <TodoInput onTodoInputChange={todoInputChange} />
+        <TodoInput onTodoInput={todoInputChange} />
       </Provider>
     );
     const todoInput = getByPlaceholderText("what needs to be done...");

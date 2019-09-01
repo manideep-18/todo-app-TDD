@@ -1,47 +1,49 @@
 import React, { Component } from "react";
-import { TodoAppBg } from "./styledComponents";
-import TodoInput from "./TodoInput";
 import { inject, observer } from "mobx-react";
-import TodoList from "./TodoList";
+import { TodoAppBg } from "./styledComponents";
 import TodoButtonComponent from "./TodoButtonComponent";
+import TodoInput from "./TodoInput";
+import TodoList from "./TodoList";
+
 @inject("todoStore", "todo")
 @observer
 class TodoApp extends Component {
   todo;
   constructor(props) {
     super(props);
-    this.state = { editTodo: false };
+    this.state = { edit: false };
   }
-  todoItemEdit = (editCurrentTodoStatus, todo) => {
-    this.setState({ editTodo: editCurrentTodoStatus });
-    this.todo = todo;
-  };
-  addTodo = description => {
-    this.props.todoStore.addTodo(description);
-  };
   handleEditChange = () => {
-    this.setState({ editTodo: !this.state.editTodo });
+    this.setState({ edit: !this.state.edit });
+  };
+  handleTodoItemEditChange = (editTodoStatus, todo) => {
+    this.setState({ edit: editTodoStatus });
+    this.todo = todo;
   };
   handleClearCompleted = () => {
     this.props.todoStore.clearCompleted();
   };
+
+  handleTodoInputChange = description => {
+    this.props.todoStore.addTodo(description);
+  };
   render() {
     return (
       <TodoAppBg>
-        <TodoInput onTodoInputChange={this.addTodo} />
-        {this.state.editTodo ? (
+        <TodoInput onTodoInput={this.handleTodoInputChange} />
+        {this.state.edit ? (
           <>
             <TodoInput
-              edit={this.state.editTodo}
+              edit={this.state.edit}
               todo={this.todo}
-              onTodoInputChange={this.addTodo}
-              updateEdit={this.handleEditChange}
+              onTodoInput={this.handleTodoInputChange}
+              onTodoEdit={this.handleEditChange}
             />
           </>
         ) : (
           ""
         )}
-        <TodoList onTodoItemChange={this.todoItemEdit} />
+        <TodoList onTodoItemEdit={this.handleTodoItemEditChange} />
         <TodoButtonComponent onClearCompleted={this.handleClearCompleted} />
       </TodoAppBg>
     );
