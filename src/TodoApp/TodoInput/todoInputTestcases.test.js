@@ -1,8 +1,8 @@
-import React from "react";
 import { render, fireEvent } from "@testing-library/react";
+import { Provider } from "mobx-react";
+import React from "react";
 import TodoInput from ".";
 import Todo from "../../Stores/Model/Todo";
-import { Provider } from "mobx-react";
 import TodoStore from "../../Stores/Model/TodoStore";
 describe("TodoInput Testsuit", () => {
   it("should test TodoInputBox is rendered", () => {
