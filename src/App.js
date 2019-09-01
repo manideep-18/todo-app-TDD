@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import TodoApp from "./TodoApp";
 import { Provider } from "mobx-react";
 import TodoStore from "./Stores/Model/TodoStore";

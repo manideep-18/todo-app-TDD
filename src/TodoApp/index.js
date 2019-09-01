@@ -12,8 +12,8 @@ class TodoApp extends Component {
     super(props);
     this.state = { editTodo: false };
   }
-  todoItemEdit = (status, todo) => {
-    this.setState({ editTodo: status });
+  todoItemEdit = (editCurrentTodoStatus, todo) => {
+    this.setState({ editTodo: editCurrentTodoStatus });
     this.todo = todo;
   };
   addTodo = description => {

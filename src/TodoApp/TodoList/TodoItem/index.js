@@ -23,8 +23,6 @@ class TodoItem extends Component {
     this.props.onTodoItemChange(true, this.props.todo);
   };
   handleClick = () => {
-    // this.setState({ delete: !this.state.delete });
-    // alert("Are you sure");
     if (window.confirm("Are you sure"))
       this.props.onTodoItemDelete(this.props.todo);
   };
@@ -63,7 +61,6 @@ class TodoItem extends Component {
     );
   };
   displayTodo = () => {
-    // console.log(this.props.todo.todoIsCompleted);
     if (this.props.todo.todoIsCompleted) {
       return this.renderCompleted();
     } else {
@@ -71,7 +68,6 @@ class TodoItem extends Component {
     }
   };
   render() {
-    // console.log("mani8", this.props.eachTodo.todoId);
     return <TodoItemBg>{this.displayTodo()}</TodoItemBg>;
   }
 }

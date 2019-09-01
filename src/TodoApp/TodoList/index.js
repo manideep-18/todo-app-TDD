@@ -11,12 +11,8 @@ class TodoList extends Component {
   handleTodoItemDelete = todo => {
     this.props.todoStore.deleteTodo(todo);
   };
-  // handleTodoComplete = todo => {
-  //   todo.setTodoIsCompleted();
-  // };
   displayTodoList = () => {
     const todosArray = this.props.todoStore.appliedFilterList;
-    // console.log("mani", todosArray);
     const todosList = todosArray.map(eachTodo => (
       <div key={eachTodo.todoId}>
         <TodoItem
