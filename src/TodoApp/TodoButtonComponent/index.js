@@ -1,5 +1,5 @@
-import React, { Component } from "react";
 import { inject, observer } from "mobx-react";
+import React, { Component } from "react";
 import {
   TodoButtonComponentBg,
   TodoClearCompletedButton
