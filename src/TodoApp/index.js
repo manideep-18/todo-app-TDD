@@ -1,7 +1,7 @@
 import React, { Component } from "react";
+import { inject, observer } from "mobx-react";
 import { TodoAppBg } from "./styledComponents";
 import TodoInput from "./TodoInput";
-import { inject, observer } from "mobx-react";
 import TodoList from "./TodoList";
 import TodoButtonComponent from "./TodoButtonComponent";
 @inject("todoStore", "todo")
@@ -10,10 +10,10 @@ class TodoApp extends Component {
   todo;
   constructor(props) {
     super(props);
-    this.state = { editTodo: false };
+    this.state = { edit: false };
   }
-  todoItemEdit = (editCurrentTodoStatus, todo) => {
-    this.setState({ editTodo: editCurrentTodoStatus });
+  todoItemEdit = (editTodoStatus, todo) => {
+    this.setState({ editTodo: editTodoStatus });
     this.todo = todo;
   };
   addTodo = description => {
