@@ -46,9 +46,27 @@ TodoComponent
             
 
 TodoItems for testing
-    [*]setting todoIsCompleted
-    []setting todoDescription
-    []adding todo
-    []deleting todo
-    []TodoInputBox
-    []Button
+    [x]setting todoIsCompleted
+    [x]setting todoDescription
+    [x]adding todo
+    [x]deleting todo
+    [x]clearCompleted
+    [x]setApplyFilter
+    [x]todosItemsLeft
+    [x]appliedFilterList
+    [x]TodoInputBox
+    [*]Button
+
+
+TodoInput component testcases
+    [x]checking inputBox(UI) rendered
+    [x]checking inputBox with null not  pass to parent 
+    [x]checking entered text to pass to parent component
+    [x]checking inputBox empty after entering text
+
+TodoList component testcases
+    [*]checking todos display
+    TodoItems
+        [x]checking text strike-off with checkbox tick
+        [x]checking onDoubleClick (TodoInput testcases) 
+        [x]checking todoDelete on closeIcon click
